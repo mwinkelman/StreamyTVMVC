@@ -1,0 +1,9 @@
+﻿@model StreamyTVMVC.Models.Network
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Partial("_NetworkNavbar", Model);
+@Html.Partial("_NetworkPageContent", Model.Shows);
+

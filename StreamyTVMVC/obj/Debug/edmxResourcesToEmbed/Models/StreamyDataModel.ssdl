@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TelevisionDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Networks">
+    <Key>
+      <PropertyRef Name="NetworkID" />
+    </Key>
+    <Property Name="NetworkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NetworkName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Abbreviation" Type="nvarchar" MaxLength="10" />
+    <Property Name="NetworkType" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NetworkImage" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Shows">
+    <Key>
+      <PropertyRef Name="ShowID" />
+    </Key>
+    <Property Name="ShowID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NetworkID" Type="int" Nullable="false" />
+    <Property Name="Seasons" Type="int" Nullable="false" />
+    <Property Name="Genre" Type="nvarchar" MaxLength="15" />
+    <Property Name="ShowImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowDescription" Type="nvarchar" MaxLength="1000" />
+    <Property Name="CarouselImage" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TelevisionDB.dbo.ABC_Shows' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ABC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowDescription" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TelevisionDB.dbo.AMC_Shows' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AMC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowDescription" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TelevisionDB.dbo.CC_Shows' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowDescription" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TelevisionDB.dbo.E_Shows' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="E_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowDescription" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TelevisionDB.dbo.FOX_Shows' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="FOX_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowDescription" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'TelevisionDB.dbo.NBC_Shows' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="NBC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="nvarchar" MaxLength="100" />
+    <Property Name="ShowName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ShowDescription" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <Association Name="FK__Shows__NetworkID__1273C1CD">
+    <End Role="Networks" Type="Self.Networks" Multiplicity="1" />
+    <End Role="Shows" Type="Self.Shows" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Networks">
+        <PropertyRef Name="NetworkID" />
+      </Principal>
+      <Dependent Role="Shows">
+        <PropertyRef Name="NetworkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TelevisionDBModelStoreContainer">
+    <EntitySet Name="Networks" EntityType="Self.Networks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shows" EntityType="Self.Shows" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ABC_Shows" EntityType="Self.ABC_Shows" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ABC_Shows].[ShowImage] AS [ShowImage], 
+    [ABC_Shows].[ShowName] AS [ShowName], 
+    [ABC_Shows].[ShowDescription] AS [ShowDescription]
+    FROM [dbo].[ABC_Shows] AS [ABC_Shows]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="AMC_Shows" EntityType="Self.AMC_Shows" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AMC_Shows].[ShowImage] AS [ShowImage], 
+    [AMC_Shows].[ShowName] AS [ShowName], 
+    [AMC_Shows].[ShowDescription] AS [ShowDescription]
+    FROM [dbo].[AMC_Shows] AS [AMC_Shows]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CC_Shows" EntityType="Self.CC_Shows" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CC_Shows].[ShowImage] AS [ShowImage], 
+    [CC_Shows].[ShowName] AS [ShowName], 
+    [CC_Shows].[ShowDescription] AS [ShowDescription]
+    FROM [dbo].[CC_Shows] AS [CC_Shows]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="E_Shows" EntityType="Self.E_Shows" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [E_Shows].[ShowImage] AS [ShowImage], 
+    [E_Shows].[ShowName] AS [ShowName], 
+    [E_Shows].[ShowDescription] AS [ShowDescription]
+    FROM [dbo].[E_Shows] AS [E_Shows]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FOX_Shows" EntityType="Self.FOX_Shows" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [FOX_Shows].[ShowImage] AS [ShowImage], 
+    [FOX_Shows].[ShowName] AS [ShowName], 
+    [FOX_Shows].[ShowDescription] AS [ShowDescription]
+    FROM [dbo].[FOX_Shows] AS [FOX_Shows]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="NBC_Shows" EntityType="Self.NBC_Shows" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [NBC_Shows].[ShowImage] AS [ShowImage], 
+    [NBC_Shows].[ShowName] AS [ShowName], 
+    [NBC_Shows].[ShowDescription] AS [ShowDescription]
+    FROM [dbo].[NBC_Shows] AS [NBC_Shows]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Shows__NetworkID__1273C1CD" Association="Self.FK__Shows__NetworkID__1273C1CD">
+      <End Role="Networks" EntitySet="Networks" />
+      <End Role="Shows" EntitySet="Shows" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

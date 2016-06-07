@@ -1,0 +1,23 @@
+﻿@using StreamyTVMVC.Models
+
+@{
+    ViewBag.Title = "Index";
+}
+@{ 
+    List<Show> showlist = ViewBag.ShowList;
+    List<Network> networklist = ViewBag.NetworkList;
+}
+@Html.Partial("_Navbar")
+<div class="container">
+    <div class="col-md-12">
+
+       @Html.Partial("_HomeCarousel", showlist)
+       <div class="row" style="padding-top:50px;">
+       
+       @foreach (var item in networklist)
+       { 
+           @Html.Partial("_NetworkButtonsRow", item)
+       }
+        </div>
+    </div>
+</div>

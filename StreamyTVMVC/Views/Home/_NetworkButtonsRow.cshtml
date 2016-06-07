@@ -1,0 +1,9 @@
+﻿@model StreamyTVMVC.Models.Network
+@using StreamyTVMVC.Models
+
+
+<div class="col-sm-2 col-lg-2 col-md-2">
+        <a href="@Url.Action("Index", "Shows", new { id = Model.NetworkID})" class="thumbnail animated bounceIn">
+            <img src= @Url.Content(Model.NetworkImage)>
+        </a>
+</div>

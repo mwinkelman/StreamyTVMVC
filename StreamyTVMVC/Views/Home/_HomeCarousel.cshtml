@@ -1,0 +1,90 @@
+﻿@model IEnumerable<StreamyTVMVC.Models.Show>
+@*@using StreamyTVMVC.Models*@
+<div class="row carousel-holder">
+    <div class="col-md-12">
+       
+         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="height:460px;">
+            <div class="carousel-inner">
+                <div class="item active bounceInDown">
+                    <img class="slide-image" src="~/Images/CarouselImages/betterCallSaulCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/blackishCarImg.jpg" />                  
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/blacklistCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/botchedCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/broadCityCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/castleCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/empireCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/grinderCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/iAmCaitCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/insideAmySchumerCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/keyAndPeeleCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/kuwtkCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/luciferCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/newgirlCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/onceuponatimeCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/scandalCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/snlCarImg.jpg" />
+                </div>
+                <div class="item">
+                    <img class="slide-image" src="~/Images/CarouselImages/svuCarImg.jpg" />
+                </div>
+                @*@foreach (var item in Model)
+                {
+                <div class="item active">
+                    <img class="slide-image" src=@item.CarouselImage alt=@item.ShowName style="height:460px;">
+                </div>
+                }*@
+           </div>
+           
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev" style="height:471.5px">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next" style="height:471.5px;">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+        </div>
+   
+     </div>
+</div>
+<script>
+$(document).ready(function () {
+    $('.carousel-inner .item:first').addClass(' active');
+
+    $('#carousel-example-generic').carousel({
+        interval: 6000
+    });
+
+    $('#carousel-example-generic').carousel('cycle');
+})
+</script>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TelevisionDBModelStoreContainer" CdmEntityContainer="TelevisionDBEntities">
+    <EntitySetMapping Name="Networks">
+      <EntityTypeMapping TypeName="TelevisionDBModel.Network">
+        <MappingFragment StoreEntitySet="Networks">
+          <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+          <ScalarProperty Name="NetworkName" ColumnName="NetworkName" />
+          <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+          <ScalarProperty Name="NetworkType" ColumnName="NetworkType" />
+          <ScalarProperty Name="NetworkImage" ColumnName="NetworkImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shows">
+      <EntityTypeMapping TypeName="TelevisionDBModel.Show">
+        <MappingFragment StoreEntitySet="Shows">
+          <ScalarProperty Name="ShowID" ColumnName="ShowID" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="NetworkID" ColumnName="NetworkID" />
+          <ScalarProperty Name="Seasons" ColumnName="Seasons" />
+          <ScalarProperty Name="Genre" ColumnName="Genre" />
+          <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
+          <ScalarProperty Name="ShowDescription" ColumnName="ShowDescription" />
+          <ScalarProperty Name="CarouselImage" ColumnName="CarouselImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ABC_Shows">
+      <EntityTypeMapping TypeName="TelevisionDBModel.ABC_Shows">
+        <MappingFragment StoreEntitySet="ABC_Shows">
+          <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="ShowDescription" ColumnName="ShowDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AMC_Shows">
+      <EntityTypeMapping TypeName="TelevisionDBModel.AMC_Shows">
+        <MappingFragment StoreEntitySet="AMC_Shows">
+          <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="ShowDescription" ColumnName="ShowDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CC_Shows">
+      <EntityTypeMapping TypeName="TelevisionDBModel.CC_Shows">
+        <MappingFragment StoreEntitySet="CC_Shows">
+          <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="ShowDescription" ColumnName="ShowDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="E_Shows">
+      <EntityTypeMapping TypeName="TelevisionDBModel.E_Shows">
+        <MappingFragment StoreEntitySet="E_Shows">
+          <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="ShowDescription" ColumnName="ShowDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FOX_Shows">
+      <EntityTypeMapping TypeName="TelevisionDBModel.FOX_Shows">
+        <MappingFragment StoreEntitySet="FOX_Shows">
+          <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="ShowDescription" ColumnName="ShowDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NBC_Shows">
+      <EntityTypeMapping TypeName="TelevisionDBModel.NBC_Shows">
+        <MappingFragment StoreEntitySet="NBC_Shows">
+          <ScalarProperty Name="ShowImage" ColumnName="ShowImage" />
+          <ScalarProperty Name="ShowName" ColumnName="ShowName" />
+          <ScalarProperty Name="ShowDescription" ColumnName="ShowDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

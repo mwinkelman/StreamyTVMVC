@@ -1,0 +1,21 @@
+﻿
+@model IEnumerable<StreamyTVMVC.Models.Show>
+@using StreamyTVMVC.Models
+
+@Html.Partial("_Navbar")
+@foreach (var item in Model)
+{
+    <div class="row">
+        <div class="col-md-3">
+            <a href="portfolio-item.html">
+                <img src=@Url.Content(item.ShowImage) style="height:300px;width:auto;">
+            </a>
+        </div>
+        <div class="col-md-9">
+            <h3>@item.ShowName</h3>
+            <h4>@item.Genre</h4>
+            <p>@item.ShowDescription</p>
+            <a class="btn btn-primary" href="#">Watch</a>
+        </div>
+    </div><br />
+}

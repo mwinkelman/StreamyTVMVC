@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TelevisionDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Network">
+    <Key>
+      <PropertyRef Name="NetworkID" />
+    </Key>
+    <Property Name="NetworkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NetworkName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Abbreviation" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NetworkType" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NetworkImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Shows" Relationship="Self.FK__Shows__NetworkID__1273C1CD" FromRole="Networks" ToRole="Shows" />
+  </EntityType>
+  <EntityType Name="Show">
+    <Key>
+      <PropertyRef Name="ShowID" />
+    </Key>
+    <Property Name="ShowID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ShowName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NetworkID" Type="Int32" Nullable="false" />
+    <Property Name="Seasons" Type="Int32" Nullable="false" />
+    <Property Name="Genre" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ShowImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="CarouselImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Network" Relationship="Self.FK__Shows__NetworkID__1273C1CD" FromRole="Shows" ToRole="Networks" />
+  </EntityType>
+  <EntityType Name="ABC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShowDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AMC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShowDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShowDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="E_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShowDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FOX_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShowDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="NBC_Shows">
+    <Key>
+      <PropertyRef Name="ShowName" />
+    </Key>
+    <Property Name="ShowImage" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ShowName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ShowDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__Shows__NetworkID__1273C1CD">
+    <End Role="Networks" Type="Self.Network" Multiplicity="1" />
+    <End Role="Shows" Type="Self.Show" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Networks">
+        <PropertyRef Name="NetworkID" />
+      </Principal>
+      <Dependent Role="Shows">
+        <PropertyRef Name="NetworkID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TelevisionDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Networks" EntityType="Self.Network" />
+    <EntitySet Name="Shows" EntityType="Self.Show" />
+    <EntitySet Name="ABC_Shows" EntityType="Self.ABC_Shows" />
+    <EntitySet Name="AMC_Shows" EntityType="Self.AMC_Shows" />
+    <EntitySet Name="CC_Shows" EntityType="Self.CC_Shows" />
+    <EntitySet Name="E_Shows" EntityType="Self.E_Shows" />
+    <EntitySet Name="FOX_Shows" EntityType="Self.FOX_Shows" />
+    <EntitySet Name="NBC_Shows" EntityType="Self.NBC_Shows" />
+    <AssociationSet Name="FK__Shows__NetworkID__1273C1CD" Association="Self.FK__Shows__NetworkID__1273C1CD">
+      <End Role="Networks" EntitySet="Networks" />
+      <End Role="Shows" EntitySet="Shows" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
